@@ -46,11 +46,6 @@
                 <div  class="weatherElements humidity">
                     <h6 id="humidity"></h6>
                 </div>
-
-                <!-- <div  class="weatherElements humidity">
-                    <h6 id="dateInMain"></h6>
-                </div> -->
-        
             </div>
         </div>
     
@@ -87,21 +82,7 @@
                 </div>
     
                 <div class="history" id="history">
-                    <!-- <div id="historyCard" class="historyCard">
-                        <p>Toronto</p>
-                    </div>
-                    <div id="historyCard" class="historyCard">
-                        <p>Mumbai</p>
-                    </div>
-                    <div id="historyCard" class="historyCard">
-                        <p>Karachi</p>
-                    </div>
-                    <div id="historyCard" class="historyCard">
-                        <p>London</p>
-                    </div>
-                    <div id="historyCard" class="historyCard">
-                        <p>Miami</p>
-                    </div> -->
+
                 </div>
 
                 <div class="forecast-text">
@@ -121,141 +102,6 @@
     </div>
 
 
-    <!-- <script src="./assets/js/script.js"></script> -->
-    <script src="./assets/js/test.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-<!-- 
-var button = document.querySelector('#button');
-var searchInput = document.querySelector('#cityInput');
-var emojiID = document.querySelector('#emojiID');
-var cityName = document.querySelector('#cityName');
-var country = document.querySelector('#country');
-var date = document.querySelector('#weatherDate');
-var temp = document.querySelector('#temp');
-var wind = document.querySelector('#wind');
-var desc = document.querySelector('#desc');
-var humi = document.querySelector('#humidity');
-var emoji = document.querySelector('.emoji');
-var forecast = document.querySelector('.forecast');
-
-
-function err() {
-  cityName.textContent = "Please enter a city name"
-};
-
-// fetches the data for the current day.
-var getCurrentDay = function (event, long, lat, searchValue) {
-  event.preventDefault();
-
-  var apiKey = 'e662d4a594996143186312cf5ab644c4'
-  var searchValue = searchInput.value.trim();
-  searchInput.value = "";
-  let currentUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchValue + '&units=metric&appid=' + apiKey;
-
-  fetch(currentUrl).then(function (response) {
-      if (response.ok) {
-        response.json()
-        .then(function (data) {
-          console.log(data);
-          displayCurrentDay(data);
-        })
-        .catch(function (){
-          err()
-        }); 
-      }
-  }); 
-};
-
-// Displays current day weather
-var displayCurrentDay = (data, emojiID) => {
-  cityName.textContent = data.name;
-  country.textContent = ", " + data.sys.country;
-  desc.textContent = data.weather[0].description;
-  temp.textContent = data['main']['temp'] + " °C";
-  wind.textContent = "Wind : " + data['wind']['deg'] + " °";
-  humi.textContent = "Humidity : " + data['main']['humidity'];
-  const emojimg = document.createElement("img");
-  emojimg.setAttribute("src", "https://openweathermap.org/img/wn/" + currentDay.weather[0].icon + "@2x.png");
-  emojiID.append(emojimg)
-}
-
-var getForecast = function (event) {
-  event.preventDefault();
-
-  var apiKey = 'e662d4a594996143186312cf5ab644c4'
-  var searchValue = searchInput.value.trim();
-  searchInput.value = "";
-  var forecastUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchValue + '&limit=5&units=metric&appid=' + apiKey;
-
-  // var forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + searchValue + '&units=metric&appid=' + apiKey;
-
-  fetch(forecastUrl).then(function (response) {
-      if (response.ok) {
-        response.json()
-        .then(function (data) {
-          console.log(data);
-          displayForecast(data);
-        })
-        .catch(function (){
-          err()
-        }); 
-      }
-  }); 
-};
-
-var displayForecast = (data) => {
-  forecast.innerHTML = ""
-  for (var i = 8; i < data.list.length; i+=7) {
-    const currentDay = data.list[i];
-    const forecastCard = document.createElement ("div")
-    forecastCard.setAttribute("class", "forecastCard")
-    const emoji = document.createElement("img")
-    emoji.setAttribute("src", "https://openweathermap.org/img/wn/" + currentDay.weather[0].icon + "@2x.png")
-
-    const forecasthr = document.createElement ("div");
-    forecasthr.setAttribute("class", "forecasthr");
-    const hr = document.createElement ("hr");
-    forecasthr.append(hr);
-
-    const desc = document.createElement ("div");
-    desc.setAttribute("class", "card-num temp");
-    const descEl = document.createElement ("p")
-    descEl.id('temp');
-    descEl.setAttribute(currentDay.weather[0].description);
-    desc.append(descEl);
-    
-    const temp = document.createElement ("div")
-    temp.setAttribute("class", "card-num temp")
-    const tempEl = document.createElement ("p")
-    tempEl.id('temp')
-    tempEl.setAttribute(currentDay.main.temp)
-    temp.append(tempEl)
-
-    const wind = document.createElement ("div")
-    wind.setAttribute("class", "card-num temp")
-    const windEl = document.createElement ("p")
-    windEl.id('wind')
-    tempEl.setAttribute(currentDay.wind.speed)
-    wind.append(windEl)
-
-    const humidity = document.createElement ("div")
-    humidity.setAttribute("class", "card-num temp")
-    const humiEl = document.createElement ("p")
-    windEl.id('humidity')
-    tempEl.setAttribute(currentDay.main.humidity)
-    humidity.append(humiEl)
-
-    forecastCard.append(emoji, forecasthr, desc, temp, wind, humidity)
-
-    forecast.append(forecastCard);
-  }
-}
-
-button.addEventListener('click', getCurrentDay, getForecast); -->

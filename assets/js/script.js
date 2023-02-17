@@ -1,18 +1,15 @@
 var button = document.querySelector('#button');
 var searchInput = document.querySelector('#cityInput');
 var cityName = document.querySelector('#cityName');
-var country = document.querySelector('#country');
 var date = document.querySelector('#weatherDate');
 var searchHistory = document.querySelector('#history');
 var temp = document.querySelector('#temp');
 var wind = document.querySelector('#wind');
 var desc = document.querySelector('#desc');
 var humi = document.querySelector('#humidity');
-var emoji = document.querySelector('.emoji');
 var emojiID = document.querySelector('#emojiID');
 var forecast = document.querySelector('.forecast');
 var todayDate = document.querySelector('#todayDate');
-var dateInMain = document.querySelector('#dateInMain');
 
 const apiKey = 'e662d4a594996143186312cf5ab644c4';
 
