@@ -38,6 +38,10 @@ This is a readme generator that is created on prompt by users in the command-lin
 
 https://github.com/adefuaad/weatherApp
 
+## Deployed URL
+
+https://adefuaad.github.io/weatherApp/
+
 ## Mock-Up
 
 The following image shows the web application's appearance and functionality:
